@@ -1,0 +1,9 @@
+logique propositionelle :des propositions auquelles on peut attribuer une valeur de verite
+exemple x est un monteur 
+
+logique du premier ordre 
+exemple : coonsaitre (x)=>monteur(x)
+lp jaya ldakhal l premier ordre fih des variables ,des constatntes ,fonctions et de connecteurs logique 
+=> also 
+we use BC=PropKB() =>propositionelle 
+BC=FolB()=>logique de premier ordre

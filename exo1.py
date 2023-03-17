@@ -1,0 +1,22 @@
+from utils import *
+from logic import *
+BC=PropKB()
+BC=FolKB()
+BC.tell(expr('Homme(Jean)'))
+BC.tell(expr('Homme(Fabien)'))
+BC.tell(expr('Homme(Franck)'))
+BC.tell(expr('Femme(Evelyne)'))
+BC.tell(expr('Femme(Sophie)'))
+BC.tell(expr('Femme(Louise)'))
+BC.tell(expr('Parent(Jean,Fabien)'))
+BC.tell(expr('(Parent(x,y) & Homme(x)  ==> Pere(x,y)'))
+BC.tell(expr('(Parent(x,y) & Femme(x)  ==> Mere(x,y)'))
+BC.tell(expr('(Parent(x,y) & Parent(x,z) & Homme(y) & Homme(z) ==> Frere(y,z)'))
+BC.tell(expr('(Parent(x,y) & Parent(x,z) & Homme(y) & Femme(z) ==> FrereSoeur(y,z)'))
+BC.tell(expr('(Parent(x,y) & Parent(x,z) & Femme(y) & Femme(z) ==> Soeur(y,z)'))
+BC.tell(expr('(Parent(x,y) & Frere(x,z)  ==> Oncle(x,y)'))
+BC.tell(expr('(Parent(x,y) & Soeur(x,z)  ==> Tante(x,y)'))
+BC.tell(expr('(Parent(x,y) & Parent(z,t)  & (Frere(x,z) || Soeur(x,z)) ==> Cousin(y,t)'))
+BC.tell(expr('(Parent(x,z) & Parent(z,t) & parent(t,x)  ==> Ancetre(x,y)'))
+BC.ask(expr("Ancetre(Franck,Jean )"))
+BC.clauses
